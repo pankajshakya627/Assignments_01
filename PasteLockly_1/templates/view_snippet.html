@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>PasteLockly - View Snippet</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <h1>PasteLockly - View Snippet</h1>
+    {% if snippet %}
+        <p>{{ snippet }}</p>
+        {% if key_entered %}
+            <h5> Content decrypted successfully!</h5>
+        {% else %}
+            <form method="post">
+                <label for="secret_key">Enter Secret Key:</label>
+                <input type="password" id="secret_key" name="secret_key" required>
+                <br>
+                <input type="submit" value="Decrypt">
+            </form>
+        {% endif %}
+    {% else %}
+        <p>Snippet not found or has expired.</p>
+    {% endif %}
+</body>
+</html>
