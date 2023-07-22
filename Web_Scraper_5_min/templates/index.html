@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Nifty 50 Stocks</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+        }
+        .card {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+            margin: 10px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+            width: 200px;
+            text-align: center;
+        }
+        .card h2 {
+            margin: 0;
+            padding: 5px 0;
+        }
+        .card p {
+            margin: 0;
+            padding: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Nifty 50 Stocks</h1>
+    {% for stock in stocks_data %}
+        <div class="card">
+            <h2>{{ stock.name }}</h2>
+            <p>{{ stock.value }}</p>
+        </div>
+    {% endfor %}
+</body>
+</html>
